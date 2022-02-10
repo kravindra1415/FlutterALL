@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/routes/app_pages.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -22,20 +23,34 @@ class _HomePageState extends State<HomePage> {
         title: const Text('Home Page'),
       ),
       body: SafeArea(
-          child: Center(
-        child: GestureDetector(
-          onTap: () {
-            Get.back(); //To take a back
-          },
-          child: Text(
-            "The $data coming from splash screen",
-            // style: const TextStyle(
-            //   fontWeight: FontWeight.bold,
-            style:
-                (GoogleFonts.cabin(fontSize: 30, fontWeight: FontWeight.bold)),
-          ),
+        child: Column(
+          children: [
+            Center(
+              child: GestureDetector(
+                onTap: () {
+                  Get.back(); //To take a back
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(50.0),
+                  child: Text(
+                    "The $data coming from splash screen",
+                    // style: const TextStyle(
+                    //   fontWeight: FontWeight.bold,
+                    style: (GoogleFonts.cabin(
+                        fontSize: 30, fontWeight: FontWeight.bold)),
+                  ),
+                ),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Get.toNamed(RoutePath.StackWidget);
+              },
+              child: const Text('Click Me'),
+            )
+          ],
         ),
-      )),
+      ),
     );
   }
 }

@@ -4,4 +4,5 @@ abstract class RoutePath {
   static const defaultRoute = '/';
   static const HomePage = '/HomePage';
   static const splashScreen = '/SplashScreen';
+  static const StackWidget = '/StackWidget';
 }
