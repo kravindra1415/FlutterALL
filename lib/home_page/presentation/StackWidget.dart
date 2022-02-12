@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class StackWidget extends StatefulWidget {
   const StackWidget({Key? key}) : super(key: key);
@@ -41,37 +42,96 @@ class _StackWidgetState extends State<StackWidget> {
               badgeColor: Colors.blue.shade400),
         ],
       ),
-      body: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+      // body: Center(
+      //   child: Padding(
+      //     padding: const EdgeInsets.all(8.0),
+      //     child: Row(
+      //       //mainAxisAlignment: MainAxisAlignment.start,
+      //       //crossAxisAlignment: CrossAxisAlignment.start,
+      //       children: [
+      //         Expanded(
+      //           child: ElevatedButton(
+      //             onPressed: () {
+      //               setState(() {
+      //                 _count += 1;
+      //               });
+      //             },
+      //             child: const Text(
+      //               'increase',
+      //               style: TextStyle(fontSize: 20),
+      //             ),
+      //           ),
+      //         ),
+      //         const SizedBox(
+      //           width: 10,
+      //         ),
+      //         ElevatedButton(
+      //           onPressed: () {
+      //             setState(() {
+      //               _count -= 1;
+      //               if (_count < 0) {
+      //                 _count = 0;
+      //               }
+      //             });
+      //           },
+      //           child: const Text(
+      //             'decrease',
+      //             style: TextStyle(fontSize: 20),
+      //           ),
+      //         ),
+      //       ],
+      //     ),
+      //   ),
+      // ),
+
+      body: Container(
+        child: Column(
           children: [
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  _count += 1;
-                });
-              },
-              child: const Text(
-                'increase count',
-                style: TextStyle(fontSize: 20),
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-              width: 30,
-            ),
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  _count -= 1;
-                  if (_count < 0) {
-                    _count = 0;
-                  }
-                });
-              },
-              child: const Text(
-                'decrease count',
-                style: TextStyle(fontSize: 20),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        _count += 1;
+                      });
+                    },
+                    child: const Text(
+                      'increase',
+                      style: TextStyle(fontSize: 15),
+                    ),
+                  ),
+                  const SizedBox(width: 20),
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        _count -= 1;
+                        if (_count < 0) {
+                          _count = 0;
+                        }
+                      });
+                    },
+                    child: const Text(
+                      'decrease',
+                      style: TextStyle(fontSize: 15),
+                    ),
+                  ),
+                  const SizedBox(width: 20),
+                  Expanded(
+                    child: InkWell(
+                      onTap: () {
+                        Get.toNamed('DrawerMenu');
+                      },
+                      child: const Text(
+                        'Go to next page',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 20),
+                      ),
+                    ),
+                  )
+                ],
               ),
             ),
           ],

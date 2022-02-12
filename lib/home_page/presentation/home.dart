@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/home_page/presentation/DrawerMenu.dart';
 import 'package:flutter_application_1/routes/app_pages.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -16,9 +17,9 @@ class _HomePageState extends State<HomePage> {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const DrawerMenu(),
       appBar: AppBar(
         centerTitle: true,
-        automaticallyImplyLeading: false,
         backgroundColor: Colors.red,
         title: const Text('Home Page'),
       ),
