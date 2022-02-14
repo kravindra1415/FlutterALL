@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
     // TODO: implement initState
     super.initState();
     Future.delayed(const Duration(seconds: 5), () {
-      Get.toNamed(RoutePath.HomePage, arguments: 'Hello');
+      Get.toNamed(RoutePath.LoginPage, arguments: 'Hello');
     });
   }
 

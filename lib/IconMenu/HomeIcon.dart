@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/home_page/presentation/DrawerMenu.dart';
 
 class HomeIcon extends StatefulWidget {
   const HomeIcon({Key? key}) : super(key: key);
@@ -10,10 +11,14 @@ class HomeIcon extends StatefulWidget {
 class _HomeIconState extends State<HomeIcon> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Home'),
+      ),
+      drawer: DrawerMenu(),
       body: Center(
         child: Text(
-          'Home Papge',
+          'Home Icon',
           style: TextStyle(fontSize: 30),
         ),
       ),

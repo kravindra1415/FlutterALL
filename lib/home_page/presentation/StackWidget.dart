@@ -122,7 +122,7 @@ class _StackWidgetState extends State<StackWidget> {
                   Expanded(
                     child: InkWell(
                       onTap: () {
-                        Get.toNamed('DrawerMenu');
+                        Get.toNamed('LoginPage');
                       },
                       child: const Text(
                         'Go to next page',
